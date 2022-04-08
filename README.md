@@ -1,18 +1,28 @@
-## Getting Started
+# Generador de contraseñas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Introducción
 
-## Folder Structure
+Esta es un aplicación sencilla que genera contraseñas seguras aleatorias.
 
-The workspace contains two folders by default, where:
+### Comenzando
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Puedes decargar el ejecutable de la versión que desees.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Pre-requisitos 📋
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+-Tener instalado el Java jre mínimo necesario, el [jre1.8.0_321](https://www.java.com/es/download/ie_manual.jsp).
 
-## Dependency Management
+### Instalación 🔧
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Con Java en tu ordenador solo tendrás que ejecutar el archivo .exe o .jar.
+
+## Ejecución ⚙️
+
+Al ejecutar el programa se pide la longitud deseada de la contraseña, una vez elegida pulsa el botón mostrar y aparecerá una contraseña segura, pulsa copiar para ponerla en el portapapeles y poder pegarla donde quieras.
+
+### Autor ✍️
+https://github.com/JSalmon11
+
+## Construido con 🛠️
+
+* [Visual studio code](https://code.visualstudio.com/downloadl)
