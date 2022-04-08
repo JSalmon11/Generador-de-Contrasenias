@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -26,6 +27,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("/img/icon.png")));
         stage.setResizable(false);
         stage.setTitle("Generador de contraseñas");
         Text textLongitud = new Text("Longitud:");
