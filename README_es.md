@@ -25,4 +25,4 @@ https://github.com/JSalmon11
 
 ## Construido con 🛠️
 
-* [Visual studio code](https://code.visualstudio.com/downloadl)
+* [Visual studio code](https://code.visualstudio.com/download)
