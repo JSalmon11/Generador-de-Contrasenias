@@ -1,28 +1,28 @@
-# Generador de contraseñas
+# Password generator
 
-## Introducción
+## Introduction
 
-Esta es un aplicación sencilla que genera contraseñas seguras aleatorias.
+This is a simple app that generates random strong passwords.
 
-### Comenzando
+### Starting
 
-Puedes decargar el ejecutable de la versión que desees.
+You can download the executable of the version you want.
 
-### Pre-requisitos 📋
+### Pre-requisites 📋
 
--Tener instalado el Java jre mínimo necesario, el [jre1.8.0_321](https://www.java.com/es/download/ie_manual.jsp).
+-Have the minimum necessary Java jre installed, the [jre1.8.0_321](https://www.java.com/es/download/ie_manual.jsp).
 
-### Instalación 🔧
+### Installation 🔧
 
-Con Java en tu ordenador solo tendrás que ejecutar el archivo .exe o .jar.
+With Java on your computer you will only have to run the .exe or .jar file.
 
-## Ejecución ⚙️
+## Execution ⚙️
 
-Al ejecutar el programa se pide la longitud deseada de la contraseña, una vez elegida pulsa el botón mostrar y aparecerá una contraseña segura, pulsa copiar para ponerla en el portapapeles y poder pegarla donde quieras.
+When executing the program, the desired length of the password is requested, once chosen, press the show button and a secure password will appear, press copy to put it on the clipboard and be able to paste it wherever you want.
 
-### Autor ✍️
+### Author ✍️
 https://github.com/JSalmon11
 
-## Construido con 🛠️
+## Built with 🛠️
 
 * [Visual studio code](https://code.visualstudio.com/downloadl)
