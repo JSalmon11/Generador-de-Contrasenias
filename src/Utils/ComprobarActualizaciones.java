@@ -29,8 +29,9 @@ public class ComprobarActualizaciones {
             String tags;
             boolean found = false;
             while ((tags = bufferedReader.readLine()) != null && !found) {
-                if(tags.contains("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/")){
-                    tagVersion = tags.replaceAll("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/", "").replace(">", "").replace("\"","").trim();
+                if (tags.contains("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/")) {
+                    tagVersion = tags.replaceAll("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/", "")
+                            .replace(">", "").replace("\"", "").trim();
                     found = true;
                 }
             }
@@ -38,7 +39,7 @@ public class ComprobarActualizaciones {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if(Integer.parseInt(version.replace(".","")) >= Integer.parseInt(tagVersion.replace(".",""))){
+        if (Integer.parseInt(version.replace(".", "")) >= Integer.parseInt(tagVersion.replace(".", ""))) {
             tagVersion = "-1";
         }
         return tagVersion;
