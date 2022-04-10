@@ -88,7 +88,12 @@ public class App extends Application {
         mostrar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                contraseñas.setText((GeneratePass.generarContraseñaSegura(Integer.parseInt(longitud.getText()))));
+                int intLongitud = -1;
+                try {
+                    intLongitud = Integer.parseInt(longitud.getText());
+                } catch (NumberFormatException ex) {
+                }
+                contraseñas.setText((GeneratePass.generarContraseñaSegura(intLongitud)));
             }
         });
 

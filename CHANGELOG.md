@@ -1,9 +1,12 @@
 # CHANGELOG
 
-## [1.1.0] - 2022-04-
+## [1.1.0] - 2022-04-10
 ### Added
 - Added button to check available updates.
 - Added internationalization support  (es, en, ja).
+
+### Fixed
+- Handled error when length field is empty.
 
 
 ## [1.0.0] - 2022-04-08

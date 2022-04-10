@@ -1,9 +1,12 @@
 # CHANGELOG
 
-## [1.1.0] - 2022-04-
+## [1.1.0] - 2022-04-10
 ### Añadido
 - Añadido botón para comprobar actualizaciones.
 - Añadido soporte para intenacionalización (es, en, ja).
+
+### Arreglado
+- Controlado error cuando el campo longitud está vacío.
 
 
 ## [1.0.0] - 2022-04-08

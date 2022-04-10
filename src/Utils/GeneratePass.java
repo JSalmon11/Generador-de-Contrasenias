@@ -16,13 +16,17 @@ public class GeneratePass {
      * @return String de una contraseña segura.
      */
     public static String generarContraseñaSegura(int longitud) {
-        StringBuilder sb = new StringBuilder(longitud);
-        char c;
-        for (int i = 0; i < sb.capacity(); ++i) {
-            c = (char) ThreadLocalRandom.current().nextInt(33, 126 + 1);
-            sb.insert(i, c);
+        if (longitud == -1) {
+            return "";
+        } else {
+            StringBuilder sb = new StringBuilder(longitud);
+            char c;
+            for (int i = 0; i < sb.capacity(); ++i) {
+                c = (char) ThreadLocalRandom.current().nextInt(33, 126 + 1);
+                sb.insert(i, c);
+            }
+            return sb.toString();
         }
-        return sb.toString();
     }
 
 }
