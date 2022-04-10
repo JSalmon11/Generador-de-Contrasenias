@@ -3,7 +3,7 @@
 ## [1.1.0] - 2022-04-
 ### Added
 - Added button to check available updates.
-- Added internationalization support  (es, en).
+- Added internationalization support  (es, en, ja).
 
 
 ## [1.0.0] - 2022-04-08
