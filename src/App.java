@@ -11,6 +11,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.awt.datatransfer.StringSelection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import Utils.ComprobarActualizaciones;
+import Utils.FormActualizar;
 import Utils.GeneratePass;
 import Utils.Windows;
 import java.awt.Toolkit;
@@ -18,9 +22,12 @@ import java.awt.datatransfer.Clipboard;
 
 /**
  * Crea y ejecuta una interfaz de usuario para generar contraseñas seguras.
- * @author  <a href="https://github.com/JSalmon11">Jorge Salmón</a>
+ * 
+ * @author <a href="https://github.com/JSalmon11">Jorge Salmón</a>
  */
 public class App extends Application {
+    private static String version = "1.0.0";
+
     public static void main(String[] args) {
         launch();
     }
@@ -54,8 +61,12 @@ public class App extends Application {
         copiar.setLayoutX(235);
         copiar.setLayoutY(340);
 
+        Button actualizar = new Button("Actualizar");
+        actualizar.setLayoutX(240);
+        actualizar.setLayoutY(5);
+
         Pane datos = new Pane();
-        datos.getChildren().addAll(longitud, mostrar, copiar, textLongitud, contraseñas);
+        datos.getChildren().addAll(longitud, mostrar, copiar, actualizar, textLongitud, contraseñas);
 
         Scene scene = new Scene(new StackPane(datos), 300, 380);
         if (Windows.isWindowsDarkMode()) {
@@ -77,6 +88,19 @@ public class App extends Application {
             public void handle(ActionEvent e) {
                 Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard.setContents(new StringSelection(contraseñas.getText()), null);
+            }
+        });
+
+        actualizar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                String versionUrl = ComprobarActualizaciones.checkUpdate(version);
+                if (versionUrl.equals("-1")) {
+                    String nuevaVersion;
+                    nuevaVersion = "https://github.com/JSalmon11/Generador-de-Contrasenias/releases/tag/" + versionUrl;
+                    Stage updateStage = new Stage();
+                    FormActualizar.actualizar(nuevaVersion, updateStage);
+                }
             }
         });
 
