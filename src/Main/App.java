@@ -1,4 +1,5 @@
 package Main;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -41,7 +42,7 @@ public class App extends Application {
         stage.getIcons().add(new Image(App.class.getResourceAsStream("/img/icon.png")));
         stage.setResizable(false);
         stage.setTitle(idioma.getProperty("mainTitulo"));
-        
+
         Text textLongitud = new Text(idioma.getProperty("textLongitud"));
         textLongitud.setFont(new Font("Roboto", 20));
         textLongitud.setLayoutX(14);
@@ -108,7 +109,7 @@ public class App extends Application {
                     nuevaVersion = "https://github.com/JSalmon11/Generador-de-Contrasenias/releases/tag/" + versionUrl;
                     Stage updateStage = new Stage();
                     FormActualizar.actualizar(nuevaVersion, updateStage);
-                }else{
+                } else {
                     Stage updateStage = new Stage();
                     FormActualizar.actualizar(versionUrl, updateStage);
                 }

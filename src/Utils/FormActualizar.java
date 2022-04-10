@@ -19,6 +19,7 @@ import i18n.Idioma;
 
 public class FormActualizar {
     private static final Idioma idioma = App.idioma;
+
     /**
      * Abre un nuevo formulario para elegir si actualizar o no a la nueva verión
      * disponible.

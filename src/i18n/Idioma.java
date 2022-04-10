@@ -31,7 +31,7 @@ public class Idioma extends Properties {
                 getProperties("ingles.properties");
                 break;
             case "ja":
-                getProperties("japanese.properties"); 
+                getProperties("japanese.properties");
                 break;
             default:
                 getProperties("ingles.properties");
