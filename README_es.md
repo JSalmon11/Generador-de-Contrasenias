@@ -14,6 +14,8 @@ Puedes decargar el ejecutable de la versión que desees.
 
 ### Instalación 🔧
 
+Descarga <a href="https://github.com/JSalmon11/Generador-de-Contrasenias/releases">aquí</a> la última versión versión.
+
 Con Java en tu ordenador solo tendrás que ejecutar el archivo .exe o .jar.
 
 ## Ejecución ⚙️
