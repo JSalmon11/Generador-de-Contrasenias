@@ -1,3 +1,5 @@
+<a href="/README_es.md">Readme en Español</a>
+
 # Password generator
 
 ## Introduction
