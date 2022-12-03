@@ -29,23 +29,11 @@ public class FormActualizar {
      */
     public static void actualizar(String nuevaVersion, Stage stage) {
         if (nuevaVersion.equals("-1")) {
-            stage.setTitle(App.idioma.getProperty("actualizarTitulo"));
-            stage.initStyle(StageStyle.UTILITY);
-
-            Text textActualizar = new Text(idioma.getProperty("textActualizar"));
-            textActualizar.setFont(new Font("Roboto", 14));
-            textActualizar.setLayoutX(14);
-            textActualizar.setLayoutY(5);
-
-            Scene scene = new Scene(new StackPane(textActualizar), 300, 50);
-            if (Windows.isWindowsDarkMode()) {
-                scene.getStylesheets().add("visual/dark-mode.css");
-            }
-
-            stage.setScene(scene);
-            stage.show();
+            notUpdate(stage, idioma.getProperty("textActualizar"));
+        } else if (nuevaVersion.equals("-2")){
+            notUpdate(stage, ComprobarActualizaciones.error);
         } else {
-            stage.setTitle("Actualizar");
+            stage.setTitle(idioma.getProperty("actualizarTitulo"));
             stage.initStyle(StageStyle.UTILITY);
 
             Button actualizar = new Button(idioma.getProperty("buttonActualizar"));
@@ -93,6 +81,24 @@ public class FormActualizar {
                 }
             });
         }
+    }
+
+    private static void notUpdate(Stage stage, String error) {
+        stage.setTitle(idioma.getProperty("actualizarTitulo"));
+        stage.initStyle(StageStyle.UTILITY);
+
+        Text textActualizar = new Text(error);
+        textActualizar.setFont(new Font("Roboto", 14));
+        textActualizar.setLayoutX(14);
+        textActualizar.setLayoutY(5);
+
+        Scene scene = new Scene(new StackPane(textActualizar), 300, 50);
+        if (Windows.isWindowsDarkMode()) {
+            scene.getStylesheets().add("visual/dark-mode.css");
+        }
+        
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

@@ -1,11 +1,24 @@
 package Utils;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.Scanner;
+
+import Main.App;
+import i18n.Idioma;
 
 public class ComprobarActualizaciones {
+    private static final Idioma idioma = App.idioma;
+    static String error = null;
+
+    public String getErrorMessage() {
+        return error;
+    }
+
+    public static void setErrorMessage(String msg) {
+        error = msg;
+    }
 
     /**
      * Comprueba si hay una nueva versión disponible de la aplicación mediante
@@ -17,32 +30,46 @@ public class ComprobarActualizaciones {
      *         <ul>
      *         <li>String de la nueva versión de la aplicación.</li>
      *         <li>String "-1" si no hay nueva versión disponible.</li>
+     *         <li>String "-2" si ha surgido algún error.</li>
      *         </ul>
      */
     public static String checkUpdate(String version) {
-        String tagVersion = "-1";
-        try {
-            URL url = new URL("https://github.com/JSalmon11/Generador-de-Contrasenias/tags");
-            URLConnection urlConnection = url.openConnection();
+        String tagVersion = getLastTag();
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            String tags;
-            boolean found = false;
-            while ((tags = bufferedReader.readLine()) != null && !found) {
-                if (tags.contains("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/")) {
-                    tagVersion = tags.replaceAll("<a href=\"/JSalmon11/Generador-de-Contrasenias/releases/tag/", "")
-                            .replace(">", "").replace("\"", "").trim();
-                    found = true;
-                }
+        if (!tagVersion.equals("-2")) {
+            if (Integer.parseInt(version.replace(".", "")) >= Integer.parseInt(tagVersion.replace(".", ""))) {
+                tagVersion = "-1";
             }
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        if (Integer.parseInt(version.replace(".", "")) >= Integer.parseInt(tagVersion.replace(".", ""))) {
-            tagVersion = "-1";
-        }
+
         return tagVersion;
+    }
+
+    public static String getLastTag() {
+        try {
+            URL url = new URL("https://api.github.com/repos/JSalmon11/Generador-de-Contrasenias/tags");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode != 200) {
+                setErrorMessage(responseCode + idioma.getProperty("textErrorGitHub"));
+                return "-2";
+            } else {
+                StringBuilder inline = new StringBuilder();
+                Scanner scanner = new Scanner(url.openStream());
+                while (scanner.hasNext()) {
+                    inline.append(scanner.nextLine());
+                }
+                scanner.close();
+
+                return inline.substring(10, 15);
+            }
+        } catch (IOException e) {
+            setErrorMessage(idioma.getProperty("textErrorInteno"));
+        }
+        return "-2";
     }
 
 }
