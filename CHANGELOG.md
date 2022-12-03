@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.1.1] - 2022-03-12
+### Fixed
+- Fixed button to check available updates.
+
 ## [1.1.0] - 2022-04-10
 ### Added
 - Added button to check available updates.
@@ -12,5 +16,6 @@
 ## [1.0.0] - 2022-04-08
 - Initial release
 
+[1.1.1]: https://github.com/JSalmon11/Generador-de-Contrasenias/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/JSalmon11/Generador-de-Contrasenias/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/JSalmon11/Generador-de-Contrasenias/compare/b552912c04419d8d2ae5d9fd9bb7f315145f46d8...1.0.0
