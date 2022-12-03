@@ -30,7 +30,7 @@ import java.awt.datatransfer.Clipboard;
  * @author <a href="https://github.com/JSalmon11">Jorge Salmón</a>
  */
 public class App extends Application {
-    private static String version = "1.1.0";
+    private static String version = "1.1.1";
     public static final Idioma idioma = new Idioma(System.getProperty("user.language"));
 
     public static void main(String[] args) {
@@ -109,7 +109,7 @@ public class App extends Application {
             @Override
             public void handle(ActionEvent e) {
                 String versionUrl = ComprobarActualizaciones.checkUpdate(version);
-                if (!versionUrl.equals("-1")) {
+                if (!versionUrl.equals("-1") && !versionUrl.equals("-2")) {
                     String nuevaVersion;
                     nuevaVersion = "https://github.com/JSalmon11/Generador-de-Contrasenias/releases/tag/" + versionUrl;
                     Stage updateStage = new Stage();
