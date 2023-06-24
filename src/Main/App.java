@@ -30,7 +30,7 @@ import java.awt.datatransfer.Clipboard;
  * @author <a href="https://github.com/JSalmon11">Jorge Salmón</a>
  */
 public class App extends Application {
-    private static String version = "1.1.1";
+    private static String version = "1.2.0";
     public static final Idioma idioma = new Idioma(System.getProperty("user.language"));
 
     public static void main(String[] args) {
